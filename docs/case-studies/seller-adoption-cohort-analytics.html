@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Seller Adoption and Cohort Analytics portfolio case study by Paresh Maheshwari." />
+  <title>Seller Adoption and Cohort Analytics | Paresh Maheshwari</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Case study navigation">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">PM</span>
+        <span>Paresh Maheshwari</span>
+      </a>
+      <a class="button secondary" href="../index.html#projects">All projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-study-hero">
+      <div class="case-study-shell">
+        <a class="case-study-back" href="../index.html#projects">← Back to projects</a>
+        <p class="eyebrow">Cohort analytics · Advanced SQL · Product adoption</p>
+        <h1 class="case-study-title">Seller Adoption and Cohort Analytics</h1>
+        <p class="case-study-lead">A longitudinal framework for measuring activation, ongoing adoption, retention, reactivation, and post-adoption behavior across seller cohorts.</p>
+
+        <div class="case-study-facts">
+          <div class="case-study-fact"><strong>SQL, Python, Tableau</strong><span>Primary tools</span></div>
+<div class="case-study-fact"><strong>Seller-week and seller-month</strong><span>Grain</span></div>
+<div class="case-study-fact"><strong>Adoption and retention</strong><span>Focus</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study-content">
+      <div class="case-study-shell">
+        <section class="case-study-section">
+  <h2>The challenge</h2>
+  <p>
+    A single adoption percentage hides important differences between eligibility, initial
+    activation, repeated usage, retention, and reactivation. It can also overcount sellers when
+    one seller is connected to multiple carriers, channels, or technical integrations.
+  </p>
+</section>
+
+<section class="case-study-section">
+  <h2>Measurement framework</h2>
+  <div class="case-study-table-wrap">
+    <table class="case-study-table">
+      <thead><tr><th>Metric</th><th>Definition</th></tr></thead>
+      <tbody>
+        <tr><td>Eligible sellers</td><td>Sellers meeting the product and activity requirements during the observation period</td></tr>
+        <tr><td>Activation</td><td>First qualifying use after eligibility</td></tr>
+        <tr><td>Active adoption</td><td>Qualifying use during a week or month</td></tr>
+        <tr><td>Retention</td><td>Continued use after activation at defined intervals</td></tr>
+        <tr><td>Reactivation</td><td>Return to use after a defined inactive period</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="case-study-section">
+  <h2>SQL design</h2>
+  <ol>
+    <li>Created one canonical seller record for each observation period.</li>
+    <li>Collapsed multiple carrier and channel relationships into seller-level flags.</li>
+    <li>Calculated first-use dates using window functions.</li>
+    <li>Built complete seller-week and seller-month panels to retain inactive periods.</li>
+    <li>Anchored retention windows to a fixed maximum observation date.</li>
+    <li>Separated recent cohorts that had not yet completed the full retention window.</li>
+  </ol>
+</section>
+
+<section class="case-study-section">
+  <h2>Key analytical insight</h2>
+  <div class="case-study-callout">
+    A seller can be associated with multiple carriers or configurations. Treating each relationship
+    as a separate seller would inflate adoption and distort conversion. The model therefore
+    measures adoption at the seller level while preserving carrier-level attributes for segmentation.
+  </div>
+</section>
+
+<section class="case-study-section">
+  <h2>Dashboard design</h2>
+  <ul>
+    <li>Activation funnel from eligible to first use.</li>
+    <li>Cohort heat map for retention over time.</li>
+    <li>Weekly active adoption trend.</li>
+    <li>Reactivation and churn movement.</li>
+    <li>Segmentation by volume, tenure, channel, and integration type.</li>
+  </ul>
+</section>
+
+<section class="case-study-section">
+  <h2>Business value</h2>
+  <p>
+    The analysis distinguishes acquisition problems from retention problems. It helps product,
+    sales, and operations teams identify whether they should improve onboarding, expand eligibility,
+    address technical friction, or re-engage previously active sellers.
+  </p>
+</section>
+
+        <section class="case-study-section">
+          <h2>Confidentiality</h2>
+          <p>
+            This public case study uses generalized business logic and synthetic examples.
+            It does not include confidential employer data, proprietary code, credentials,
+            customer information, or internal documentation.
+          </p>
+        </section>
+
+        <div class="case-study-footer-actions">
+          <a class="button primary" href="../index.html#projects">Explore another project</a>
+          <a class="button secondary" href="../index.html#contact">Contact me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Paresh Maheshwari</span>
+      <span>Portfolio case study</span>
+    </div>
+  </footer>
+
+  <script>
+    const yearElement = document.querySelector("#year");
+    if (yearElement) yearElement.textContent = new Date().getFullYear();
+
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+  </script>
+</body>
+</html>

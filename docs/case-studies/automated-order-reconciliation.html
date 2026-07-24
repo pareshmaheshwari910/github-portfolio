@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Automated Order Reconciliation portfolio case study by Paresh Maheshwari." />
+  <title>Automated Order Reconciliation | Paresh Maheshwari</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Case study navigation">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">PM</span>
+        <span>Paresh Maheshwari</span>
+      </a>
+      <a class="button secondary" href="../index.html#projects">All projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-study-hero">
+      <div class="case-study-shell">
+        <a class="case-study-back" href="../index.html#projects">← Back to projects</a>
+        <p class="eyebrow">ETL · SQL controls · Operational automation</p>
+        <h1 class="case-study-title">Automated Order Reconciliation</h1>
+        <p class="case-study-lead">A rules-driven process for matching order and financial transactions, explaining exceptions, and replacing repetitive spreadsheet-based reconciliation.</p>
+
+        <div class="case-study-facts">
+          <div class="case-study-fact"><strong>SQL Server, SSIS</strong><span>Primary tools</span></div>
+<div class="case-study-fact"><strong>Automated reconciliation</strong><span>Pattern</span></div>
+<div class="case-study-fact"><strong>Exception and control reporting</strong><span>Output</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study-content">
+      <div class="case-study-shell">
+        <section class="case-study-section">
+  <h2>The challenge</h2>
+  <p>
+    Order-management and financial systems frequently differ because of timing, missing records,
+    duplicate transactions, status changes, currency treatment, and inconsistent reference keys.
+    Manual spreadsheet reconciliation is slow, difficult to audit, and dependent on individual knowledge.
+  </p>
+</section>
+
+<section class="case-study-section">
+  <h2>Solution workflow</h2>
+  <ol>
+    <li>Load source extracts into staging tables.</li>
+    <li>Standardize order IDs, dates, currencies, quantities, and status values.</li>
+    <li>Generate source control totals.</li>
+    <li>Apply deterministic matching rules.</li>
+    <li>Apply approved amount and timing tolerances.</li>
+    <li>Classify unresolved exceptions.</li>
+    <li>Publish reconciliation and audit outputs.</li>
+  </ol>
+</section>
+
+<section class="case-study-section">
+  <h2>Exception taxonomy</h2>
+  <div class="case-study-table-wrap">
+    <table class="case-study-table">
+      <thead><tr><th>Exception</th><th>Meaning</th><th>Typical action</th></tr></thead>
+      <tbody>
+        <tr><td>Missing in source A</td><td>Transaction appears only in the second system</td><td>Check ingestion and source timing</td></tr>
+        <tr><td>Missing in source B</td><td>Transaction appears only in the first system</td><td>Check posting and downstream processing</td></tr>
+        <tr><td>Amount mismatch</td><td>Matched key but differing financial value</td><td>Review tax, discount, currency, or adjustment logic</td></tr>
+        <tr><td>Status mismatch</td><td>Systems disagree on lifecycle status</td><td>Review event timing and status mapping</td></tr>
+        <tr><td>Duplicate</td><td>More than one record exists for the expected key</td><td>Identify source duplication or split transactions</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="case-study-section">
+  <h2>Technical implementation</h2>
+  <ul>
+    <li>SSIS packages orchestrated extraction, staging, validation, and publication.</li>
+    <li>Stored procedures applied reusable matching and exception rules.</li>
+    <li>Control tables captured run status, record counts, and reconciliation totals.</li>
+    <li>Indexes and set-based SQL improved repeatability and performance.</li>
+    <li>Exception outputs supported both analyst review and management reporting.</li>
+  </ul>
+</section>
+
+<section class="case-study-section">
+  <h2>Business value</h2>
+  <p>
+    The automated workflow creates a repeatable control process, gives analysts a prioritized
+    exception queue, and preserves the reason each transaction failed to reconcile. This reduces
+    manual comparison and improves the auditability of the final result.
+  </p>
+</section>
+
+<section class="case-study-section">
+  <h2>Future improvements</h2>
+  <ul>
+    <li>Configurable matching rules maintained through metadata.</li>
+    <li>Automated notification when control totals breach thresholds.</li>
+    <li>Root-cause trend reporting by source and exception category.</li>
+    <li>Incremental processing for high-volume transaction feeds.</li>
+  </ul>
+</section>
+
+        <section class="case-study-section">
+          <h2>Confidentiality</h2>
+          <p>
+            This public case study uses generalized business logic and synthetic examples.
+            It does not include confidential employer data, proprietary code, credentials,
+            customer information, or internal documentation.
+          </p>
+        </section>
+
+        <div class="case-study-footer-actions">
+          <a class="button primary" href="../index.html#projects">Explore another project</a>
+          <a class="button secondary" href="../index.html#contact">Contact me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Paresh Maheshwari</span>
+      <span>Portfolio case study</span>
+    </div>
+  </footer>
+
+  <script>
+    const yearElement = document.querySelector("#year");
+    if (yearElement) yearElement.textContent = new Date().getFullYear();
+
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+  </script>
+</body>
+</html>

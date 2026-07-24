@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Executive KPI and WBR Framework portfolio case study by Paresh Maheshwari." />
+  <title>Executive KPI and WBR Framework | Paresh Maheshwari</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Case study navigation">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">PM</span>
+        <span>Paresh Maheshwari</span>
+      </a>
+      <a class="button secondary" href="../index.html#projects">All projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-study-hero">
+      <div class="case-study-shell">
+        <a class="case-study-back" href="../index.html#projects">← Back to projects</a>
+        <p class="eyebrow">Business intelligence · Metric governance · Executive reporting</p>
+        <h1 class="case-study-title">Executive KPI and WBR Framework</h1>
+        <p class="case-study-lead">A repeatable reporting system that connects governed metric definitions, automated datasets, weekly trends, variance commentary, and accountable follow-up actions.</p>
+
+        <div class="case-study-facts">
+          <div class="case-study-fact"><strong>SQL, Power BI, Tableau</strong><span>Primary tools</span></div>
+<div class="case-study-fact"><strong>Senior leadership</strong><span>Audience</span></div>
+<div class="case-study-fact"><strong>Weekly business review</strong><span>Cadence</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study-content">
+      <div class="case-study-shell">
+        <section class="case-study-section">
+  <h2>The challenge</h2>
+  <p>
+    Weekly reporting often becomes a manual exercise in reconciling numbers from different teams.
+    Leaders may receive the same KPI with different definitions, refresh dates, filters, or
+    denominators, reducing trust and leaving less time for decision-making.
+  </p>
+</section>
+
+<section class="case-study-section">
+  <h2>Framework design</h2>
+  <ol>
+    <li>Define each KPI in business language.</li>
+    <li>Document numerator, denominator, grain, exclusions, owner, and refresh timing.</li>
+    <li>Build a governed SQL or semantic-layer model.</li>
+    <li>Validate totals against source control reports.</li>
+    <li>Automate the dashboard refresh and variance inputs.</li>
+    <li>Capture actions, owners, and due dates from the review.</li>
+  </ol>
+</section>
+
+<section class="case-study-section">
+  <h2>Example KPI contract</h2>
+  <div class="case-study-table-wrap">
+    <table class="case-study-table">
+      <thead><tr><th>Field</th><th>Example documentation</th></tr></thead>
+      <tbody>
+        <tr><td>Business definition</td><td>Plain-language explanation of what the metric represents</td></tr>
+        <tr><td>Calculation</td><td>Numerator, denominator, exclusions, and aggregation method</td></tr>
+        <tr><td>Grain</td><td>Daily, weekly, seller, shipment, customer, or transaction</td></tr>
+        <tr><td>Owner</td><td>Business owner accountable for interpretation</td></tr>
+        <tr><td>Data source</td><td>Governed model and upstream lineage</td></tr>
+        <tr><td>Limitations</td><td>Known gaps, delays, and interpretation cautions</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="case-study-section">
+  <h2>WBR experience</h2>
+  <p>
+    The dashboard is organized around current performance, historical trend, target variance,
+    major drivers, risks, and next actions. Commentary is focused on what changed and why,
+    rather than restating the values already visible in the chart.
+  </p>
+</section>
+
+<section class="case-study-section">
+  <h2>Quality controls</h2>
+  <ul>
+    <li>Freshness status displayed with each reporting period.</li>
+    <li>Source-to-dashboard reconciliation checks.</li>
+    <li>Automated duplicate and null monitoring.</li>
+    <li>Version-controlled metric definitions.</li>
+    <li>Named business and technical owners.</li>
+  </ul>
+</section>
+
+<section class="case-study-section">
+  <h2>Business value</h2>
+  <p>
+    The framework reduces debate about whose number is correct and shifts the review toward
+    root causes, tradeoffs, and decisions. It also makes onboarding easier because metric logic
+    and ownership are documented rather than held by individual analysts.
+  </p>
+</section>
+
+        <section class="case-study-section">
+          <h2>Confidentiality</h2>
+          <p>
+            This public case study uses generalized business logic and synthetic examples.
+            It does not include confidential employer data, proprietary code, credentials,
+            customer information, or internal documentation.
+          </p>
+        </section>
+
+        <div class="case-study-footer-actions">
+          <a class="button primary" href="../index.html#projects">Explore another project</a>
+          <a class="button secondary" href="../index.html#contact">Contact me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Paresh Maheshwari</span>
+      <span>Portfolio case study</span>
+    </div>
+  </footer>
+
+  <script>
+    const yearElement = document.querySelector("#year");
+    if (yearElement) yearElement.textContent = new Date().getFullYear();
+
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+token.json
+secrets/
+data/raw/
+data/private/
+outputs/private/
+__pycache__/
+.pytest_cache/
+.venv/
+.DS_Store

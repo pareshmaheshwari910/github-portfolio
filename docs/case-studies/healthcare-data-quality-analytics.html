@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Healthcare Data Quality Analytics portfolio case study by Paresh Maheshwari." />
+  <title>Healthcare Data Quality Analytics | Paresh Maheshwari</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Case study navigation">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">PM</span>
+        <span>Paresh Maheshwari</span>
+      </a>
+      <a class="button secondary" href="../index.html#projects">All projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-study-hero">
+      <div class="case-study-shell">
+        <a class="case-study-back" href="../index.html#projects">← Back to projects</a>
+        <p class="eyebrow">Healthcare analytics · Data quality · Governance</p>
+        <h1 class="case-study-title">Healthcare Data Quality Analytics</h1>
+        <p class="case-study-lead">A reusable data-quality framework for healthcare professional, claims, CRM activity, and territory data, designed around transparent validation rules and remediation priorities.</p>
+
+        <div class="case-study-facts">
+          <div class="case-study-fact"><strong>SQL, Python, BI</strong><span>Primary tools</span></div>
+<div class="case-study-fact"><strong>Life sciences and healthcare</strong><span>Domain</span></div>
+<div class="case-study-fact"><strong>Synthetic records</strong><span>Data</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study-content">
+      <div class="case-study-shell">
+        <section class="case-study-section">
+  <h2>The challenge</h2>
+  <p>
+    Healthcare reporting depends on consistent identities and reference data across provider
+    masters, claims, CRM calls, and territory mappings. Missing identifiers, invalid specialties,
+    duplicate professionals, stale addresses, and broken references can undermine segmentation
+    and downstream reporting.
+  </p>
+</section>
+
+<section class="case-study-section">
+  <h2>Quality dimensions</h2>
+  <div class="case-study-table-wrap">
+    <table class="case-study-table">
+      <thead><tr><th>Dimension</th><th>Example rule</th></tr></thead>
+      <tbody>
+        <tr><td>Completeness</td><td>Required identifiers and specialty fields are populated</td></tr>
+        <tr><td>Validity</td><td>Values conform to approved formats and reference lists</td></tr>
+        <tr><td>Consistency</td><td>Provider attributes agree across master and activity sources</td></tr>
+        <tr><td>Uniqueness</td><td>Duplicate professionals and organizations are identified</td></tr>
+        <tr><td>Timeliness</td><td>Records meet source-specific freshness expectations</td></tr>
+        <tr><td>Referential integrity</td><td>Claims and calls resolve to valid master entities</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="case-study-section">
+  <h2>Solution design</h2>
+  <p>
+    I structured rules as metadata so every check has a source, field, severity, owner,
+    threshold, and remediation instruction. SQL produces rule-level failures and entity-level
+    scores, while the BI layer summarizes quality by source, country, domain, and reporting period.
+  </p>
+</section>
+
+<section class="case-study-section">
+  <h2>Example workflow</h2>
+  <pre class="case-study-code">Source profiling
+    ↓
+Standardization and reference checks
+    ↓
+Rule execution
+    ↓
+Failure classification and severity
+    ↓
+Quality scorecard
+    ↓
+Remediation queue and trend tracking</pre>
+</section>
+
+<section class="case-study-section">
+  <h2>Dashboard outputs</h2>
+  <ul>
+    <li>Overall quality score and trend.</li>
+    <li>Failures by source and quality dimension.</li>
+    <li>High-severity remediation queue.</li>
+    <li>Duplicate and unresolved identity analysis.</li>
+    <li>Before-and-after remediation comparison.</li>
+  </ul>
+</section>
+
+<section class="case-study-section">
+  <h2>Business value</h2>
+  <p>
+    The framework moves data quality from ad hoc investigation to a measurable operating process.
+    Teams can prioritize the failures with the greatest downstream impact and confirm whether
+    remediation work improves the quality score over time.
+  </p>
+</section>
+
+        <section class="case-study-section">
+          <h2>Confidentiality</h2>
+          <p>
+            This public case study uses generalized business logic and synthetic examples.
+            It does not include confidential employer data, proprietary code, credentials,
+            customer information, or internal documentation.
+          </p>
+        </section>
+
+        <div class="case-study-footer-actions">
+          <a class="button primary" href="../index.html#projects">Explore another project</a>
+          <a class="button secondary" href="../index.html#contact">Contact me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Paresh Maheshwari</span>
+      <span>Portfolio case study</span>
+    </div>
+  </footer>
+
+  <script>
+    const yearElement = document.querySelector("#year");
+    if (yearElement) yearElement.textContent = new Date().getFullYear();
+
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+  </script>
+</body>
+</html>

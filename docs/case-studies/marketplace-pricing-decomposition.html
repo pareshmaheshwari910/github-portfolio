@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Marketplace Pricing Decomposition portfolio case study by Paresh Maheshwari." />
+  <title>Marketplace Pricing Decomposition | Paresh Maheshwari</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Case study navigation">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">PM</span>
+        <span>Paresh Maheshwari</span>
+      </a>
+      <a class="button secondary" href="../index.html#projects">All projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-study-hero">
+      <div class="case-study-shell">
+        <a class="case-study-back" href="../index.html#projects">← Back to projects</a>
+        <p class="eyebrow">Advanced analytics · SQL · Executive storytelling</p>
+        <h1 class="case-study-title">Marketplace Pricing Decomposition</h1>
+        <p class="case-study-lead">A structured analytical framework for separating true rate changes from shifts in shipment mix, helping leaders understand why an average marketplace cost moved.</p>
+
+        <div class="case-study-facts">
+          <div class="case-study-fact"><strong>SQL, Python, BI</strong><span>Primary tools</span></div>
+<div class="case-study-fact"><strong>Rate-versus-mix decomposition</strong><span>Method</span></div>
+<div class="case-study-fact"><strong>Synthetic marketplace data</strong><span>Data</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study-content">
+      <div class="case-study-shell">
+        <section class="case-study-section">
+  <h2>The challenge</h2>
+  <p>
+    An increase in average shipping cost does not automatically mean carrier rates increased.
+    The result may instead be driven by a higher share of long-distance, heavy, expedited, or
+    otherwise expensive shipments. Comparing averages alone can therefore lead to the wrong action.
+  </p>
+</section>
+
+<section class="case-study-section">
+  <h2>Analytical approach</h2>
+  <p>
+    I divided transactions into comparable segments using carrier, service level, weight band,
+    distance zone, and seller cohort. For each segment, the total change was separated into rate,
+    mix, and interaction effects.
+  </p>
+  <pre class="case-study-code">Rate effect = (Current rate − Prior rate) × Prior mix
+Mix effect  = (Current mix − Prior mix) × Prior rate
+Interaction = (Current rate − Prior rate) × (Current mix − Prior mix)</pre>
+</section>
+
+<section class="case-study-section">
+  <h2>Data preparation</h2>
+  <ul>
+    <li>Created a stable segment key across comparison periods.</li>
+    <li>Reconciled total volume and cost before decomposing the change.</li>
+    <li>Separated newly appearing and disappearing segments.</li>
+    <li>Applied minimum-volume thresholds to reduce noise.</li>
+    <li>Checked whether extreme outliers materially changed the conclusion.</li>
+  </ul>
+</section>
+
+<section class="case-study-section">
+  <h2>Example executive output</h2>
+  <div class="case-study-table-wrap">
+    <table class="case-study-table">
+      <thead><tr><th>Driver</th><th>Interpretation</th><th>Potential action</th></tr></thead>
+      <tbody>
+        <tr><td>Rate effect</td><td>Price changed within comparable shipment segments</td><td>Review contracts, discounts, or pricing rules</td></tr>
+        <tr><td>Mix effect</td><td>Volume shifted toward more expensive segments</td><td>Investigate customer behavior and operating mix</td></tr>
+        <tr><td>Interaction</td><td>Rate and mix changed simultaneously</td><td>Review the most influential combined segments</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="case-study-section">
+  <h2>Business value</h2>
+  <p>
+    The framework prevents teams from treating every movement in an average as a pricing problem.
+    It provides a traceable explanation of which segments drove the change and makes the final
+    recommendation more defensible for finance, operations, and commercial stakeholders.
+  </p>
+</section>
+
+<section class="case-study-section">
+  <h2>Limitations</h2>
+  <ul>
+    <li>Results depend on selecting dimensions that create genuinely comparable segments.</li>
+    <li>Very sparse segments can create unstable contributions.</li>
+    <li>The method explains movement but does not by itself prove causality.</li>
+  </ul>
+</section>
+
+        <section class="case-study-section">
+          <h2>Confidentiality</h2>
+          <p>
+            This public case study uses generalized business logic and synthetic examples.
+            It does not include confidential employer data, proprietary code, credentials,
+            customer information, or internal documentation.
+          </p>
+        </section>
+
+        <div class="case-study-footer-actions">
+          <a class="button primary" href="../index.html#projects">Explore another project</a>
+          <a class="button secondary" href="../index.html#contact">Contact me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Paresh Maheshwari</span>
+      <span>Portfolio case study</span>
+    </div>
+  </footer>
+
+  <script>
+    const yearElement = document.querySelector("#year");
+    if (yearElement) yearElement.textContent = new Date().getFullYear();
+
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+  </script>
+</body>
+</html>

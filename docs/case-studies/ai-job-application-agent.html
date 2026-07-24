@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI Job Application Agent portfolio case study by Paresh Maheshwari." />
+  <title>AI Job Application Agent | Paresh Maheshwari</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Case study navigation">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">PM</span>
+        <span>Paresh Maheshwari</span>
+      </a>
+      <a class="button secondary" href="../index.html#projects">All projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-study-hero">
+      <div class="case-study-shell">
+        <a class="case-study-back" href="../index.html#projects">← Back to projects</a>
+        <p class="eyebrow">Automation · Responsible AI · Product workflow</p>
+        <h1 class="case-study-title">AI Job Application Agent</h1>
+        <p class="case-study-lead">A human-in-the-loop application system that helps a job seeker discover opportunities, evaluate fit, create evidence-based application materials, and maintain an auditable approval process.</p>
+
+        <div class="case-study-facts">
+          <div class="case-study-fact"><strong>Python, SQLite, Streamlit</strong><span>Primary tools</span></div>
+<div class="case-study-fact"><strong>Product design and implementation</strong><span>My role</span></div>
+<div class="case-study-fact"><strong>Working prototype</strong><span>Status</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study-content">
+      <div class="case-study-shell">
+        <section class="case-study-section">
+  <h2>The challenge</h2>
+  <p>
+    Job searching involves repeated work across multiple disconnected steps: collecting postings,
+    removing duplicates, judging fit, tailoring application documents, checking factual accuracy,
+    and tracking outcomes. Fully automating this process also creates risk because an agent can
+    overstate qualifications or act without adequate review.
+  </p>
+</section>
+
+<section class="case-study-section">
+  <h2>The solution</h2>
+  <p>
+    I designed a modular Python workflow that separates opportunity discovery from application
+    approval. Each job passes through normalization, deduplication, fit scoring, packet generation,
+    factual verification, and a final human approval gate.
+  </p>
+  <div class="case-study-callout">
+    The central design principle is simple: AI can prepare and validate the work, but the user
+    remains responsible for approving any external action.
+  </div>
+</section>
+
+<section class="case-study-section">
+  <h2>Workflow architecture</h2>
+  <pre class="case-study-code">Job sources
+    ↓
+Collector → Normalizer → Deduplicator
+    ↓
+Fit scoring and ranked opportunities
+    ↓
+Application packet generator
+    ↓
+Factual verification
+    ↓
+Human approval manifest
+    ↓
+Application tracking and daily reporting</pre>
+</section>
+
+<section class="case-study-section">
+  <h2>Key capabilities</h2>
+  <div class="case-study-table-wrap">
+    <table class="case-study-table">
+      <thead><tr><th>Capability</th><th>Implementation</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td>Job normalization</td><td>Standardized company, title, location, and source fields</td><td>Enables reliable comparison and filtering</td></tr>
+        <tr><td>Deduplication</td><td>Identity rules and normalized attributes</td><td>Prevents repeated review of the same role</td></tr>
+        <tr><td>Fit scoring</td><td>Weighted skills and experience matching</td><td>Prioritizes the strongest opportunities</td></tr>
+        <tr><td>Factual verification</td><td>Application claims checked against approved source material</td><td>Reduces unsupported résumé statements</td></tr>
+        <tr><td>Approval control</td><td>File hashes invalidate approval after material changes</td><td>Creates a meaningful audit trail</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="case-study-section">
+  <h2>Engineering decisions</h2>
+  <ul>
+    <li>Used a CLI-first structure so each workflow stage can be tested independently.</li>
+    <li>Stored normalized job, score, packet, and status information in SQLite.</li>
+    <li>Separated configuration from code for approved domains and scoring rules.</li>
+    <li>Added safe failure behavior when factual verification or approval requirements are not met.</li>
+    <li>Used Streamlit as a lightweight review and tracking interface.</li>
+  </ul>
+</section>
+
+<section class="case-study-section">
+  <h2>Validation and safeguards</h2>
+  <ul>
+    <li>Unit tests for daily automation and core workflow behavior.</li>
+    <li>Explicit allowlists for supported application domains.</li>
+    <li>No automatic submission without a verified and approved packet.</li>
+    <li>No credentials, private résumé files, or real application history in the public version.</li>
+  </ul>
+</section>
+
+<section class="case-study-section">
+  <h2>Outcome and next steps</h2>
+  <p>
+    The prototype demonstrates a complete, controlled workflow rather than a collection of
+    disconnected AI prompts. The next public release will use fictional job postings and a
+    synthetic candidate profile, followed by stronger score explainability, dashboard screenshots,
+    and CI-based test execution.
+  </p>
+</section>
+
+        <section class="case-study-section">
+          <h2>Confidentiality</h2>
+          <p>
+            This public case study uses generalized business logic and synthetic examples.
+            It does not include confidential employer data, proprietary code, credentials,
+            customer information, or internal documentation.
+          </p>
+        </section>
+
+        <div class="case-study-footer-actions">
+          <a class="button primary" href="../index.html#projects">Explore another project</a>
+          <a class="button secondary" href="../index.html#contact">Contact me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Paresh Maheshwari</span>
+      <span>Portfolio case study</span>
+    </div>
+  </footer>
+
+  <script>
+    const yearElement = document.querySelector("#year");
+    if (yearElement) yearElement.textContent = new Date().getFullYear();
+
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+  </script>
+</body>
+</html>
