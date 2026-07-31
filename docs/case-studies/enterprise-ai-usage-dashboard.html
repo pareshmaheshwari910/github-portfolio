@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Enterprise AI usage analytics case study by Paresh Maheshwari." />
+  <title>Enterprise AI Usage Analytics Platform | Paresh Maheshwari</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Case study navigation">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">PM</span>
+        <span>Paresh Maheshwari</span>
+      </a>
+      <a class="button secondary" href="../index.html#projects">All projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-study-hero">
+      <div class="case-study-shell">
+        <a class="case-study-back" href="../index.html#projects">← Back to projects</a>
+        <p class="eyebrow">Analytics engineering · Generative AI · Business intelligence</p>
+        <h1 class="case-study-title">Enterprise AI Usage, Adoption &amp; ROI Analytics Platform</h1>
+        <p class="case-study-lead">
+          An end-to-end measurement platform for understanding whether licensed employees
+          adopt generative AI, which use cases create value, what the program costs, and
+          where quality, governance, or license-utilization issues need attention.
+        </p>
+        <div class="case-study-facts">
+          <div class="case-study-fact"><strong>PostgreSQL, dbt, Python</strong><span>Data platform</span></div>
+          <div class="case-study-fact"><strong>Streamlit, Tableau</strong><span>Analytics delivery</span></div>
+          <div class="case-study-fact"><strong>26 models, 120 tests</strong><span>Engineering scope</span></div>
+        </div>
+        <div class="case-study-link-row">
+          <a class="button primary" href="https://github.com/pareshmaheshwari910/enterprise-ai-usage-dashboard" target="_blank" rel="noreferrer">View GitHub repository</a>
+          <a class="button secondary" href="https://pareshmaheshwari910.github.io/enterprise-ai-usage-dashboard/" target="_blank" rel="noreferrer">Open full project site</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study-content">
+      <div class="case-study-shell">
+        <section class="case-study-section">
+          <h2>The business problem</h2>
+          <p>
+            Prompt counts alone do not tell leaders whether an AI investment is useful,
+            efficient, or safe. The measurement layer must connect employee and license
+            context with usage, token cost, response quality, productivity signals, and
+            responsible-AI events.
+          </p>
+          <div class="case-study-callout">
+            Productivity value and ROI are labeled as estimates. Modeled time saved is not
+            presented as audited financial benefit.
+          </div>
+        </section>
+
+        <section class="case-study-section">
+          <h2>Latest synthetic-data snapshot</h2>
+          <div class="case-study-metrics">
+            <div class="case-study-metric"><strong>318</strong><span>Monthly active users</span></div>
+            <div class="case-study-metric"><strong>94.6%</strong><span>Licensed-user adoption</span></div>
+            <div class="case-study-metric"><strong>3,985</strong><span>Monthly interactions</span></div>
+            <div class="case-study-metric"><strong>89.7%</strong><span>Successful responses</span></div>
+            <div class="case-study-metric"><strong>$7,336</strong><span>Monthly AI cost</span></div>
+            <div class="case-study-metric"><strong>812</strong><span>Estimated hours saved</span></div>
+            <div class="case-study-metric"><strong>$54,911</strong><span>Estimated productivity value</span></div>
+            <div class="case-study-metric"><strong>6.49x</strong><span>Estimated ROI</span></div>
+          </div>
+        </section>
+
+        <section class="case-study-section">
+          <h2>Architecture and modeling</h2>
+          <p>
+            Python creates deterministic synthetic data for employees, departments,
+            licenses, sessions, interactions, model prices, surveys, and governance
+            events. PostgreSQL stores the raw layer, and dbt transforms the data into
+            staging, intermediate, dimensional, fact, and reporting-mart layers.
+          </p>
+          <div class="case-study-table-wrap">
+            <table class="case-study-table">
+              <thead><tr><th>Layer</th><th>Purpose</th></tr></thead>
+              <tbody>
+                <tr><td>Raw</td><td>Source-shaped records, keys, repeatable loading, and reconciliation.</td></tr>
+                <tr><td>Staging</td><td>Consistent names, data types, booleans, dates, and cleanup.</td></tr>
+                <tr><td>Intermediate</td><td>Reusable cost, session, license-month, and user-month logic.</td></tr>
+                <tr><td>Dimensions and facts</td><td>Clear grains for users, dates, models, departments, sessions, interactions, surveys, and events.</td></tr>
+                <tr><td>Marts</td><td>Executive, department, adoption, use-case, license, and governance outputs.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="case-study-section">
+          <h2>Data quality and controls</h2>
+          <ul>
+            <li>Primary-key, non-null, accepted-value, range, and relationship tests.</li>
+            <li>Session-to-interaction count reconciliation.</li>
+            <li>Interaction timestamps checked against session boundaries.</li>
+            <li>Governance events connected to policy or sensitivity flags.</li>
+            <li>Unique user-month and department-month reporting grains.</li>
+            <li>Estimated ROI calculation reconciliation.</li>
+          </ul>
+          <p>
+            A custom dbt test caught one interaction timestamp eight seconds beyond its
+            session end. I corrected the raw record and generator while keeping the test.
+          </p>
+        </section>
+
+        <section class="case-study-section">
+          <h2>Dashboard</h2>
+          <p>
+            The dashboard includes Executive Overview, Adoption &amp; Retention, Use Cases
+            &amp; Models, Cost &amp; Estimated ROI, Quality &amp; Governance, and License
+            Optimization.
+          </p>
+
+          <img class="case-study-image" src="../assets/ai-usage-dashboard/executive-overview.png" alt="AI usage executive overview dashboard" />
+          <p class="case-study-caption">Executive view of adoption, activity, cost, productivity value, and department performance.</p>
+
+          <img class="case-study-image" src="../assets/ai-usage-dashboard/cost-roi.png" alt="AI cost and estimated ROI dashboard" />
+          <p class="case-study-caption">Fixed and variable cost, estimated productivity value, and department ROI.</p>
+
+          <img class="case-study-image" src="../assets/ai-usage-dashboard/quality-governance.png" alt="AI quality and governance dashboard" />
+          <p class="case-study-caption">Response quality, latency, policy risk, and governance monitoring.</p>
+        </section>
+
+        <section class="case-study-section">
+          <h2>Initial findings</h2>
+          <ul>
+            <li>Adoption increased by 56.3 percentage points from January to June.</li>
+            <li>Engineering reached 100% latest-month adoption.</li>
+            <li>Human Resources had the lowest latest-month adoption at 84.6%.</li>
+            <li>Engineering produced the highest estimated monthly productivity value at $19,936.92.</li>
+            <li>Inactive fixed-seat licenses represented about $510 per month in potential reallocation.</li>
+          </ul>
+        </section>
+
+        <section class="case-study-section">
+          <h2>Production improvements</h2>
+          <ul>
+            <li>Integrate platform audit logs, HR, Finance, identity, and license sources.</li>
+            <li>Add slowly changing employee and department history.</li>
+            <li>Apply access controls, retention rules, and prompt-content minimization.</li>
+            <li>Validate productivity using workflow outcomes and controlled experiments.</li>
+            <li>Add orchestration, freshness monitoring, alerts, and cloud deployment.</li>
+          </ul>
+        </section>
+
+        <section class="case-study-section">
+          <h2>Confidentiality</h2>
+          <p>
+            All employee, prompt, pricing, survey, cost, and governance records are
+            synthetic. No confidential employer data, credentials, or real employee
+            monitoring data is included.
+          </p>
+        </section>
+
+        <div class="case-study-footer-actions">
+          <a class="button primary" href="https://github.com/pareshmaheshwari910/enterprise-ai-usage-dashboard" target="_blank" rel="noreferrer">Explore the repository</a>
+          <a class="button secondary" href="../index.html#projects">Explore another project</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Paresh Maheshwari</span>
+      <span>Portfolio case study</span>
+    </div>
+  </footer>
+  <script>
+    const yearElement = document.querySelector("#year");
+    if (yearElement) yearElement.textContent = new Date().getFullYear();
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+  </script>
+</body>
+</html>
